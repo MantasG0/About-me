@@ -12,14 +12,19 @@ body{
     background-color: black;
     color: white;
     border-radius: 10px;
-    text-align: justify;
+    text-align: left;
     padding-left: 10px;
     padding-right: 10px;
     width: 60%;
-    font-size: 1rem;
     font-style:normal;
     outline: white solid 2px;
     font-stretch: expanded;
+}
+
+@media (orientation: portrait){
+    .description{
+        width: 80%;
+    }
 }
 
 .main-container{
