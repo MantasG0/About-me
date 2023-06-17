@@ -36,12 +36,6 @@ body{
     margin: 40px 20px 0px 20px;
     
 }
-.main-container h1{
-    border-radius: 10px;
-    color: white;
-    padding: 10px;
-    text-decoration: underline 2px;
-}
 
 .main-container .box{
     display: flex;
