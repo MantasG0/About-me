@@ -5,69 +5,8 @@ body{
     font-family: 'Poppins', sans-serif;
     background-color: grey;
 }
-.description{
-    margin-bottom: 50px;
-    margin-top: 50px;
-    background-color: black;
-    color: white;
-    border-radius: 10px;
-    text-align: left;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 60%;
-    font-style:normal;
-    outline: white solid 2px;
-    font-stretch: expanded;
-}
 
-@media (orientation: portrait){
-    .description{
-        width: 80%;
-    }
-}
-
-.main-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 40px 20px 0px 20px;
-    min-width: 270px;
-    
-}
-
-.main-container .box{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.main-container .box .col{
-    display: flex;
-    flex-direction: column;
-    width: 32.5%;
-    
-}
-
-.main-container .box .col img{
-    width: 100%;
-    margin-bottom: 50px;
-    border-radius: 5px;
-    outline: black solid 2px;
-}
-
-@media only screen and (max-width: 769px) {
-    .main-container .box{
-        flex-direction: column;
-    }
-    .main-container .box .col{
-        width: 100%;
- 
-    }
-}
-
+/* Title container */
 .title-container{
     background-color: black;
     width: 100%;
@@ -132,7 +71,18 @@ body{
     margin-top: 50px;
     margin-left: 2px;
 }
-
+.dp-text{
+    text-align: center;
+    outline: white solid 1px;
+    width: 100%;
+    position: relative;
+}
+.dp-text p{
+    margin: 0px;
+}
+.op-1{
+    position: relative;
+}
 .selector{
     position: relative;
     display: inline-block;
@@ -144,16 +94,64 @@ body{
     display:block;
 }
 .dropdown-content .dp-text:hover{
-    background-color: green;   
+    background-color: green;
+    width: 110%;   
 }
 .selector button.label:focus{
     color: red;
 }
 .dropdown-content a{
-    width: 100%;
     color: white;
     width: 100%;
     height: 100%;
+}
+
+/* Main container */
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 270px;
+    margin: 40px 20px 0px 20px;
+}
+
+.main-container .box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.main-container .box .col{
+    display: flex;
+    flex-direction: column;
+    width: 32.5%;  
+}
+
+.main-container .box .col img{
+    width: 100%;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    outline: black solid 2px;
+}
+
+/* description*/
+.description{
+    margin-bottom: 50px;
+    margin-top: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 60%;
+    font-style:normal;
+    outline: white solid 2px;
+    font-stretch: expanded;
 }
 
 span.desc-title{
@@ -206,19 +204,26 @@ span.desc-sub{
 .contacts li{
     color:white;
     font-size: clamp(12px,1vw,16px);
+    white-space: nowrap;
 }
 .contacts a:hover{
     color: blue;
 }
-.dp-text{
-    text-align: center;
-    outline: white solid 1px;
-    width: 100%;
-    position: relative;
+
+/* Media tags should always be at the bottom of file*/
+
+@media (orientation: portrait){
+    .description{
+        width: 80%;
+    }
 }
-.dp-text p{
-    margin: 0px;
-}
-.op-1{
-    position: relative;
+
+@media only screen and (max-width: 769px) {
+    .main-container .box{
+        flex-direction: column;
+    }
+    .main-container .box .col{
+        width: 100%;
+ 
+    }
 }
