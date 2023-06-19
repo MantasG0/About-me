@@ -1,0 +1,103 @@
+/* Title container */
+body{
+    margin:0;
+}
+
+.title-container{
+    background-color: black;
+    width: 100%;
+    min-width: 270px;
+    height: 50px;
+    margin: 0px;
+    color: white;
+    font-size: 25px;
+    border-bottom: 2px solid white;
+    display:flex;
+    align-items: center; 
+}
+.title-container h1{
+    font-size: clamp(8px,2vw,25px);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 0; 
+    margin-left: auto;
+    margin-right: 50%;
+    translate: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.title-container .dropdown{
+    font-size: clamp(10px,1vw,15px);
+    height: 50px;
+}
+.dropdown{
+    float:left;
+    white-space: nowrap;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.title-container span.label{
+    color: white;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    vertical-align:middle;
+    font-size: clamp(10px,2vw,25px);
+    border-radius: 10px;
+    border: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    
+} 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    word-break: 50px;
+    line-height: 50px;
+    font-size: clamp(10px,1vw,15px);
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgb(253, 253, 253);
+    z-index: 1;
+    border: 1px solid white;
+    margin-top: 50px;
+    margin-left: 2px;
+}
+.dp-text{
+    text-align: center;
+    outline: white solid 1px;
+    width: 100%;
+    position: relative;
+}
+.dp-text p{
+    margin: 0px;
+}
+.op-1{
+    position: relative;
+}
+.selector{
+    position: relative;
+    display: inline-block;
+}
+.title-container span.label:hover{
+    background-color: green;
+}
+.selector:hover .dropdown-content {
+    display:block;
+}
+.dropdown-content .dp-text:hover{
+    background-color: green;
+    width: 110%;   
+}
+.selector button.label:focus{
+    color: red;
+}
+.dropdown-content a{
+    color: white;
+    width: 100%;
+    height: 100%;
+}
