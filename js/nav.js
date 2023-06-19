@@ -1,0 +1,47 @@
+var title = "Hello";
+
+function createNav(){
+document.write("<html>");
+document.write("<head> ");
+document.write("    <link rel=\"stylesheet\" href=\"css\/nav.css\">   ");
+document.write("<\/head>");
+document.write("<body>");
+document.write("    <div class=\"title-container\">");
+document.write("        <div class=\"selector\">");
+document.write("            <span class=\"label\">All Projects<\/span>");
+document.write("            <div class=\"dropdown\">");
+document.write("                <div class=\"dropdown-content\">");
+document.write("                    <a href=\".\/index.html\">");
+document.write("                        <div class=\"op-1 dp-text\">");
+document.write("                            <p>Home<\/p>");
+document.write("                        <\/div>");
+document.write("                    <\/a>");
+document.write("                    <a href=\".\/battleIwoJima.html\">");
+document.write("                        <div class=\"op-1 dp-text\">");
+document.write("                            <p>Educational Game<\/p>");
+document.write("                        <\/div>");
+document.write("                    <\/a>");
+document.write("                    <a href=\".\/unityGame.html\">");
+document.write("                        <div class=\"op-2 dp-text\">");
+document.write("                            <p>Unity Game<\/p>");
+document.write("                        <\/div>");
+document.write("                    <\/a>");
+document.write("                    <a href=\".\/movies.html\">");
+document.write("                        <div class=\"op-1 dp-text\">");
+document.write("                            <p>Movie Website<\/p>");
+document.write("                        <\/div>");
+document.write("                    <\/a>");
+document.write("                    <a href=\".\/project1.html\">");
+document.write("                        <div class=\"op-1 dp-text\">");
+document.write("                            <p>Social App<\/p>");
+document.write("                        <\/div>");
+document.write("                    <\/a>");
+document.write("                <\/div>");
+document.write("            <\/div>");
+document.write("        <\/div>");
+document.write("        <h1 class=\"nav-title\">"+title+"<\/h1>");
+document.write("    <\/div>");
+document.write("<\/body>");
+document.write("<\/html>");
+document.write("");
+}
