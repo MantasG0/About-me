@@ -10,6 +10,7 @@ canvas {
     display: block;
     position: absolute;
     z-index: -1;
+    min-width: 270px;
 }
 
 /* Main container */
@@ -19,8 +20,8 @@ canvas {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-width: 270px;
-    margin: 40px 20px 40px 20px;
+    min-width: 230px;
+    margin: 20px 20px 20px 20px;
     position: relative;
 }
 
@@ -30,6 +31,7 @@ canvas {
     justify-content: space-between;
     align-items: center;
     gap: 50px;
+    width: 100%;
 }
 
 .main-container .box .col{
