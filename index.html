@@ -18,114 +18,13 @@
     </div>
     <div class="main-container">
         <canvas id="spaceCanvas">
-            <script>
-                    // Get the canvas element
-const canvas = document.getElementById('spaceCanvas');
-const ctx = canvas.getContext('2d');
+          <script src="js/space.js">
 
-// Set canvas dimensions to match window size
-function setCanvasSize() {
-    const container = document.querySelector('.main-container');
-    const divElements = document.getElementsByClassName('main-container');
-    const div = divElements[0];
-    const width = div.offsetWidth + getMarginValue(container, 'marginLeft') + getMarginValue(container, 'marginRight');
-    const height = div.offsetHeight + getMarginValue(container, 'marginTop') + getMarginValue(container, 'marginBottom');
-    
-    canvas.width = width;
-    canvas.height = height;
-    //canvas.width = window.innerWidth;
-    //canvas.height = window.innerHeight;
-}
-function getMarginValue(element, property) {
-  const styles = window.getComputedStyle(element);
-  return parseFloat(styles[property]);
-}
-
-// Create a function to draw the space background
-function drawSpaceBackground() {
-  // Create a gradient for the background
-  const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-  gradient.addColorStop(0.4, '#000000');
-    // Start color (black)
-  gradient.addColorStop(1, '#26719C');  // End color (dark blue)
-
-  // Fill the canvas with the gradient
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-}
-
-// Create random stars
-function generateRandomStars() {
-  stars.length = 0; // Clear the stars array
-  for (let i = 0; i < 500; i++) {
-    const x = Math.random() * canvas.width;
-    const y = Math.random() * canvas.height;
-    const radius = Math.random() * 2;
-    stars.push({ x, y, radius });
-  }
-}
-
-const stars = [];
-
-// Update star positions
-function updateStars() {
-  stars.forEach(star => {
-    star.y += 0.1; // Update y position (stars move downward) star speed
-    if (star.y > canvas.height) {
-      star.y = 0; // Reset star position to the top
-    }
-  });
-}
-
-// Draw stars on the canvas
-function drawStars() {
-  ctx.fillStyle = 'white'; // Star color (white)
-  stars.forEach(star => {
-    // Apply random opacity variation
-    const opacity = Math.random() * 0.5 + 0.5; // Random opacity between 0.5 and 1
-    ctx.globalAlpha = opacity;
-
-    ctx.beginPath();
-    ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
-    ctx.fill();
-
-    ctx.globalAlpha = 1;
-  });
-}
-
-// Animation loop
-function animate() {
-  requestAnimationFrame(animate);
-  updateStars();
-  drawSpaceBackground();
-  drawStars();
-}
-
-// Handle window resize event
-function handleWindowResize() {
-    setCanvasSize()
-    generateRandomStars();
-}
-
-// Handle page load or refresh event
-function handlePageLoad() {
-  setCanvasSize();
-  generateRandomStars();
-  animate();
-}
-
-// Start the animation
-generateRandomStars();
-animate();
-
-// Add window resize event listener
-window.addEventListener("resize", handleWindowResize);
-window.addEventListener('load', handlePageLoad);
-            </script>
+          </script>   
         </canvas>
         <div class="box">
             <div class="text-holder" id="col">
-                <img src="images/mn.JPG">
+                <img src="images/mn.jpg">
                 <div class="text1">
                     <p id="p-text">
                         Hello There!
@@ -138,43 +37,12 @@ window.addEventListener('load', handlePageLoad);
                         to showcase some of the projects that I have
                         worked on.
                     </p>
-                    <script>
-                        const container = document.querySelector('.text1');
-                        const textElement = document.getElementById('p-text');
-
-                        function adjustFontSize() {
-                            const originalFontSize = parseFloat(getComputedStyle(textElement).fontSize);
-
-                            const computedStyles = getComputedStyle(container);
-
-                            const paddingTop = parseFloat(computedStyles.paddingTop);
-                            const paddingBottom = parseFloat(computedStyles.paddingBottom);
-
-                            const containerHeight = container.clientHeight - paddingTop - paddingBottom;
-
-
-                            textElement.style.fontSize = originalFontSize + 'px'; // Reset font size before calculating
-                            console.log("Container height: "+containerHeight)
-                            console.log("text height: "+textElement.scrollHeight)
-                            const currentFontSize = parseFloat(textElement.style.fontSize);
-                            if (textElement.scrollHeight >= containerHeight) {
-                                if (currentFontSize <= 1) return;
-                                
-                                textElement.style.fontSize = (currentFontSize - 1) + 'px';
-                            } else if (currentFontSize < 16 && textElement.scrollHeight+ 40<containerHeight) {
-                                textElement.style.fontSize = (currentFontSize + 1) + 'px';
-                            }
-                        }
-
-                        window.addEventListener('resize', adjustFontSize);
-                        adjustFontSize();
-                    </script>
                 </div>
             </div>
             <div class="pic-holder" id="col">
-                <img src="images/p.JPG">
+                <img src="images/p.jpg">
                 <div class="pic">
-                    <img id="img-pic" src="images/uni.JPG">
+                    <img id="img-pic" src="images/uni.jpg">
                 </div>
             </div>
         </div>
@@ -184,5 +52,6 @@ window.addEventListener('load', handlePageLoad);
             createContact()
         </script>
     </div>
+    <script src="js/index-text.js"></script>
 </body>
 </html>
