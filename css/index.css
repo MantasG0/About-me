@@ -2,99 +2,86 @@ body{
     margin: 0;
     background-color: rgb(17, 17, 17);
 }
-img{ 
-    width:100%; 
-    height:auto;
-    max-width:100%;
-}
-h1{
-    color: white;
-}
-.main-container p{
-    margin: 0;
-    font-size: 12px;
-    color: white;
-}
 /* This is the main pic*/
 .main-container{
-    position: relative;   
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 1000px;
-    margin: 0px;
-    min-width: 1000px;
-    min-height: 250px;
-
-    background-image: url("../images/mn.jpg");
-    background-size: cover;
-    background-color: grey;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-
-    border-bottom: 1px solid black;
+    min-width: 270px;
+    height: 100%;
+    min-height: 100vh;
 }
-.project-container{
-    position: relative;   
-    width: 100%;
-    height: 1000px;
-    margin: 0px;
-    min-width: 1000px;
-    min-height: 250px;
 
-    background-image: url("../images/m.jpg");
-    background-size: cover;
-    background-color: grey;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-
-    border-bottom: 1px solid white;
-}
- /* This is the about me pic */
-.main-container-about-me{
+canvas {
+    display: block;
     position: absolute;
-    border: 20px solid black;
-    outline-style: solid;
-    outline-color: white;
-    width: 800px;
-    height: 600px;
-    left: 50%;
-    top: 50%;
-    margin: -300px 0px 0px -400px;
+    z-index: -1;
+    min-width: 270px;
+}
+
+.box{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: green; 
+}
+
+#col{
+    display: flex;
+    flex-direction: column;
+    width: 50%; 
+    background-color: aqua;
+    outline: white solid 2px;
+}
+
+.text-holder{
+    position: relative;
+}
+.text1{
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    z-index: 2;
+    background-color: black;
+    color: white;
+    opacity: 80%;
+    height: 40%;
+    width: 50%;
+    border-radius: 10px;
+    translate: 50% 50%;
     text-align: center;
+    padding: 20px;
+}
 
-    background-image: url("../images/p.jpg");
-    background-size: cover;
+#p-text{
+    margin: 0px;
 }
-.main-container-about-me h1{
-    background-color: rgba(0, 0, 0, 0.700);
-    padding: 10px;
+.pic-holder{
     position: relative;
-    left: 38%;
-    top: -4%;
-    width: 200px;
-    padding: 10px;
-    border-radius: 25px;
 }
-.main-container-about-me p{
-    font-size: 15px;
-    font-weight:bold;
-    text-align: justify;
-    position: relative;
-    left: 35%;
-    top: 2%;
-    background-color: rgba(0, 0, 0, 0.700);
-    width: 450px;
-    padding: 10px;
-    border-radius: 25px;
-}
-/* This is photo of me */
-.main-container-photo{
+
+.pic{
     position: absolute;
-    width: 250px;
-    height: 333px;
-    border: 2px solid black;
-    right: 0%;
-    bottom: 0%;
-    margin: 0px 20px 20px 0px;
-    background-image: url("../images/uni.jpg"); 
-    background-size: cover;
+    bottom: 50%;
+    right: 25%;
+    z-index: 2;
+    background-color: blueviolet;
+    height: 80%;
+    translate: 50% 50%;
+}
+
+#img-pic{
+    height: 100%;
+    outline: black solid 2px;
+    box-shadow: 0px 0px 16px 0px rgba(255, 255, 255, 0.863);
+}
+
+@media only screen and (max-width: 769px) {
+    .box{
+        flex-direction: column;
+    }
+    #col{
+        width: 100%;
+ 
+    }
 }
