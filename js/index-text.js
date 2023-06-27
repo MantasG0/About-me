@@ -11,16 +11,17 @@ function adjustFontSize() {
 
     const containerHeight = container.clientHeight - paddingTop - paddingBottom;
 
-
     textElement.style.fontSize = originalFontSize + 'px'; // Reset font size before calculating
-    console.log("Container height: "+containerHeight)
-    console.log("text height: "+textElement.scrollHeight)
-    const currentFontSize = parseFloat(textElement.style.fontSize);
-    if (textElement.scrollHeight >= containerHeight) {
+
+    while (textElement.scrollHeight > containerHeight) {
+        const currentFontSize = parseFloat(textElement.style.fontSize);
         if (currentFontSize <= 1) return;
         
         textElement.style.fontSize = (currentFontSize - 1) + 'px';
-    } else if (currentFontSize < 16 && textElement.scrollHeight+ 40<containerHeight) {
+    }
+
+    while (textElement.scrollHeight + 40 < containerHeight && parseFloat(textElement.style.fontSize) < 16) {
+        const currentFontSize = parseFloat(textElement.style.fontSize);
         textElement.style.fontSize = (currentFontSize + 1) + 'px';
     }
 }
