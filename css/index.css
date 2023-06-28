@@ -29,7 +29,6 @@ canvas {
     display: flex;
     flex-direction: column;
     width: 50%; 
-    background-color: aqua;
     outline: white solid 2px;
 }
 
@@ -64,7 +63,6 @@ canvas {
     bottom: 50%;
     right: 25%;
     z-index: 2;
-    background-color: blueviolet;
     height: 80%;
     translate: 50% 50%;
 }
@@ -78,10 +76,19 @@ canvas {
 @media only screen and (max-width: 769px) {
     .box{
         flex-direction: column;
-        gap: 100px;
     }
     #col{
         width: 100%;
  
     }
+}
+
+
+
+@media (orientation: portrait){
+
+}
+
+@media (orientation: landscape){
+
 }

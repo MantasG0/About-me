@@ -11,28 +11,30 @@ img{
     color: white;
     font-size: clamp(8px,2vw,25px);
 }
-.game-download h1{
-    text-align: center;
-    justify-content:center;
 
-    position: absolute;
-    left:50%;
-    top: 80%;
-
-    background-color: green;
-    border-radius: 10px;
-    padding: 10px;
-    width:300px;
-    margin: 0px 0px 0px -150px;   
+.main-container-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
 }
+
+.main-container-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 @media screen {
     /* This is the main pic*/
     .main-container{
         position: relative;   
         width: 100%;
-        height: 1000px;
+        height: 100vh;
         margin: 0px;
-        min-width: 1000px;
+        min-width: 270px;
         min-height: 250px;
 
         background-image: url("../images/mn.jpg");
@@ -49,51 +51,20 @@ img{
         border: 20px solid black;
         outline-style: solid;
         outline-color: white;
-        width: 800px;
-        height: 450px;
+        width: 60%;
+        height: auto;
         left: 50%;
         top: 50%;
-        margin: -300px 0px 0px -400px;
-        text-align: center;
+        translate:-50% -50%;
         background-color: black;
     }
 }
-.project-container{
-    position: relative;   
-    width: 100%;
-    height: 1000px;
-    margin: 0px;
-    min-width: 1000px;
-    min-height: 250px;
 
-    background-image: url("../images/m.jpg");
-    background-size: cover;
-    background-color: grey;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-
-    border-bottom: 1px solid white;
+@media (orientation: portrait){
+    .main-container{
+        height: 80vh;
+    }
+    .main-container-about-me{
+        width: 80%;
+    }
 }
-.main-container-about-me h1{
-    background-color: rgba(0, 0, 0, 0.700);
-    padding: 10px;
-    position: relative;
-    left: 38%;
-    top: -4%;
-    width: 200px;
-    padding: 10px;
-    border-radius: 25px;
-}
-.main-container-about-me p{
-    font-size: 15px;
-    font-weight:bold;
-    text-align: justify;
-    position: relative;
-    left: 35%;
-    top: 2%;
-    background-color: rgba(0, 0, 0, 0.700);
-    width: 450px;
-    padding: 10px;
-    border-radius: 25px;
-}
-/* This is photo of me */
