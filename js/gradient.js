@@ -15,7 +15,6 @@ function setCanvasSize() {
     //canvas.width = window.innerWidth;
     //canvas.height = window.innerHeight;
 }
-
 function getMarginValue(element, property) {
   const styles = window.getComputedStyle(element);
   return parseFloat(styles[property]);
@@ -25,7 +24,7 @@ function getMarginValue(element, property) {
 function drawSpaceBackground() {
   // Create a gradient for the background
   const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-  gradient.addColorStop(0.4, '#000000');
+  gradient.addColorStop(0.4, 'Black');
     // Start color (black)
   gradient.addColorStop(1, '#26719C');  // End color (dark blue)
 
@@ -34,69 +33,20 @@ function drawSpaceBackground() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
-// Create random stars
-function generateRandomStars() {
-  stars.length = 0; // Clear the stars array
-  for (let i = 0; i < 500; i++) {
-    const x = Math.random() * canvas.width;
-    const y = Math.random() * canvas.height;
-    const radius = Math.random() * 2;
-    stars.push({ x, y, radius });
-  }
-}
-
-const stars = [];
-
-// Update star positions
-function updateStars() {
-  stars.forEach(star => {
-    star.y += 0.1; // Update y position (stars move downward) star speed
-    if (star.y > canvas.height) {
-      star.y = 0; // Reset star position to the top
-    }
-  });
-}
-
-// Draw stars on the canvas
-function drawStars() {
-  ctx.fillStyle = 'white'; // Star color (white)
-  stars.forEach(star => {
-    // Apply random opacity variation
-    const opacity = Math.random() * 0.5 + 0.5; // Random opacity between 0.5 and 1
-    ctx.globalAlpha = opacity;
-
-    ctx.beginPath();
-    ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
-    ctx.fill();
-
-    ctx.globalAlpha = 1;
-  });
-}
-
-// Animation loop
-function animate() {
-  requestAnimationFrame(animate);
-  updateStars();
-  drawSpaceBackground();
-  drawStars();
-}
-
 // Handle window resize event
 function handleWindowResize() {
     setCanvasSize()
-    generateRandomStars();
+    drawSpaceBackground();
 }
 
 // Handle page load or refresh event
 function handlePageLoad() {
-  setCanvasSize();
-  generateRandomStars();
-  animate();
+    setCanvasSize();
+    drawSpaceBackground();
 }
 
-// Start the animation
-generateRandomStars();
-animate();
+setCanvasSize()
+drawSpaceBackground();
 
 // Add window resize event listener
 window.addEventListener("resize", handleWindowResize);
