@@ -25,6 +25,6 @@ function adjustFontSize() {
         textElement.style.fontSize = (currentFontSize + 1) + 'px';
     }
 }
-
+window.addEventListener('load', adjustFontSize);
 window.addEventListener('resize', adjustFontSize);
 adjustFontSize();
