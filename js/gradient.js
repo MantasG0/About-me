@@ -26,7 +26,7 @@ function drawSpaceBackground() {
   const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
   gradient.addColorStop(0.4, 'Black');
     // Start color (black)
-  gradient.addColorStop(1, '#026902');  // End color (dark blue)
+  gradient.addColorStop(1, '#026902');  // End color
     //#9c1d00 Red
   // Fill the canvas with the gradient
   ctx.fillStyle = gradient;
